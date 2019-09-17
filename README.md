@@ -13,15 +13,15 @@ REACT.js
 Postgres
 Milestones
 - By September
-- create site map
-- all team members know tech stack well enough for starting project
+  - create site map
+  - all team members know tech stack well enough for starting project
 -By October
-- home page, about, review front-end created
-- allow commenting to post, and possible direct message system
-- user database created
+  - home page, about, review front-end created
+  - allow commenting to post, and possible direct message system
+  - user database created
 -By November
-- Backend for user review post should be created
-- Start testing the backend for issues
+  - Backend for user review post should be created
+  - Start testing the backend for issues
 -By December
-- continue additional site features
-- start creating options for landlords to create listings for properties
+  - continue additional site features
+  - start creating options for landlords to create listings for properties
