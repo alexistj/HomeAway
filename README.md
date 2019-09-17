@@ -1,4 +1,6 @@
 HomeAway Proposal
+
+
 Current project members:
 * Nicholas Jung
 * Kirsten Martindale
