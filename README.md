@@ -12,6 +12,7 @@ Django
 REACT.js
 Postgres
 Milestones
+
 - By September
   - create site map
   - all team members know tech stack well enough for starting project
