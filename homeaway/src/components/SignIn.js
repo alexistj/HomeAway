@@ -1,4 +1,5 @@
 import React from 'react'
+import './SignIn.css'
 
 class SignIn extends React.Component{
 
@@ -15,7 +16,7 @@ class SignIn extends React.Component{
                     <input type="text" placeholder="Enter Username" name="userName" required />
                     <br/>
                     <label htmlFor="password"><b>Password: </b></label>
-                    <input type="text" placeholder="Enter password" name="password" required />
+                    <input type="password" placeholder="Enter password" name="password" required />
                     <br/>
                     <a href="">Forgot Password</a>
                     <br/>
