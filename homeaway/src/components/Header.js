@@ -5,7 +5,7 @@ import './Header.css';
 import Reviews from "./Reviews";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
-import SignIn from "./SignIn";
+import SignInApp from "./SignIn/SignInApp";
 
 class Header extends React.Component {
 
@@ -35,7 +35,7 @@ class Header extends React.Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/reviews" component={Reviews}/>
                     <Route path="/aboutUs" component={AboutUs}/>
-                    <Route path="/signIn" component={SignIn}/>
+                    <Route path="/signIn" component={SignInApp}/>
                 </Switch>
             </Router>
         )
