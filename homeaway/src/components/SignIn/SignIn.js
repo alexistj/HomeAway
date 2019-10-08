@@ -5,9 +5,26 @@ import './SignIn.css'
 
 class SignIn extends React.Component{
 
-    handleClick()
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName: "",
+            password: "",
+        };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+}
+
+    handleClick(event)
     {
-        console.log("tried to log in")
+        this.props.history.push("/");
+    }
+
+    handleChange(event)
+    {
+        const input = event.target.name;
+        const value = event.target.value;
+        this.setState({ [input]: value })
     }
 
     render() {
@@ -15,16 +32,16 @@ class SignIn extends React.Component{
             <div className="signin">
                 <form>
                     <label htmlFor="userName"><b>Username/E-mail: </b></label>
-                    <input type="text" placeholder="Enter Username" name="userName" required />
+                    <input type="text" onChange={this.handleChange} placeholder="Enter Username" name="userName" required />
                     <br/>
                     <label htmlFor="password"><b>Password: </b></label>
-                    <input type="password" placeholder="Enter password" name="password" required />
+                    <input type="password" onChange={this.handleChange} placeholder="Enter password" name="password" required />
                     <br/>
                     <Link to="/SignIn/ResetPassword">Forgot Password</Link>
                     <br/>
                     <Link to="/SignIn/CreateAccount">Don't have an account Sign-up</Link>
                     <br/>
-                    <button className="logInButton" onClick={this.handleClick}>Log-in</button>
+                    <button className="login" onClick={this.handleClick}>Log-in</button>
                 </form>
             </div>
         )

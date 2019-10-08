@@ -3,9 +3,26 @@ import "./SignIn.css";
 
 class forgotPassword extends React.Component{
 
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            email: ""
+        };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
     handleClick()
     {
-        console.log("tried getting new password")
+        this.props.history.push("/SignIn");
+    }
+
+    handleChange(event)
+    {
+        const input = event.target.name;
+        const value = event.target.value;
+        this.setState({ [input]: value })
     }
 
     render()
@@ -14,7 +31,7 @@ class forgotPassword extends React.Component{
             <div className="password">
                 <form>
                     <label htmlFor="email"><b>E-mail: </b></label>
-                    <input type="text" placeholder="Enter email" name="email" required />
+                    <input type="text" onChange={this.handleChange} placeholder="Enter email" name="email" required />
                     <br/>
                     <button className="newPasswordButton" onClick={this.handleClick}>Reset Password</button>
                 </form>
