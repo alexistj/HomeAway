@@ -1,0 +1,21 @@
+pip install django   in terminal 
+
+
+DB setup:
+1. sudo apt-get install postgresql postgresql-contrib
+or download PSQL shell for SQL commandss
+
+Installing instruction:
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
+
+Trouble shooting if: 
+ "psql: could not connect to server: No such file or directory
+
+Is the server running locally and accepting connections on 
+Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?"
+
+https://stackoverflow.com/questions/42653690/psql-could-not-connect-to-server-no-such-file-or-directory-5432-error
+
+
+//example for connection between django + psql
+https://medium.com/fbdevclagos/building-a-rest-api-endpoint-for-ticket-app-with-django-part1-3213d8622c9d
