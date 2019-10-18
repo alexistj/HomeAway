@@ -31,3 +31,12 @@ Milestones
 -By December
   - continue additional site features
   - start creating options for landlords to create listings for properties
+
+
+
+
+Credits:
+Flask + React + Postgres Starter by  jeffreymew
+https://github.com/jeffreymew/Flask-React-Postgres
+
+used to create foundation of flask back-edn + api calls
