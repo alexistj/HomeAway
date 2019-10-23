@@ -1,4 +1,6 @@
 import React from 'react'
+import './Reviews.css'
+import Default from "./defultPicture";
 
 class ReviewPosts extends React.Component {
 
@@ -7,18 +9,18 @@ class ReviewPosts extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            item: []
+            items: []
         }
     }
 
     componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/posts/1")
+        fetch("https://jsonplaceholder.typicode.com/posts")
             .then(response => response.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        item: result
+                        items: result
                     });
                 },
                 // Note: it's important to handle errors here
@@ -42,7 +44,12 @@ class ReviewPosts extends React.Component {
         } else {
             return (
                 <ul>
-                    <li key={this.state.item.id}> {this.state.item.title} </li>
+                    {items.map(item => (
+                    <li className='post' key={item.id} style={{backgroundColor: item.id % 2 === 0 ? "#a8d8ee" : "#f5f5f5"}}>
+                        <img src={Default} alt="Default" />
+                        {item.title}
+                    </li>
+                    ))}
                 </ul>
             );
         }

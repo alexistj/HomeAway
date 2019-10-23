@@ -1,0 +1,16 @@
+.post {
+    border: 1px solid #000000;
+    padding: 20px;
+    list-style-type: none;
+    width: 900px;
+    margin: auto;
+}
+
+.dropdown {
+    width: 500px;
+    padding: 5px;
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
