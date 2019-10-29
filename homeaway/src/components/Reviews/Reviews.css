@@ -13,4 +13,25 @@
     text-align: center;
     display: inline-block;
 }
+ /*for the star rating*/
+.checked {
+  color: orange;
+}
 
+.column {
+  float: left;
+}
+
+.left, .middle {
+  width: 25%;
+}
+
+.right {
+  width: 48%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
