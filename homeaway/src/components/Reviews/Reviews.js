@@ -6,15 +6,13 @@ class Reviews extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {
-            displayPosts: false
-        }
+        this.state = { displayPosts: false };
 
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        if(event.target.value != "0")
+        if(event.target.value !== "0")
         {
             this.setState({displayPosts: true});
         }
