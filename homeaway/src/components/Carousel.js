@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './CarouselComponents/Carousel.css';
+
 
 const imgUrls = [
 	"https://cmeimg-a.akamaihd.net/640/clsd/getty/c64f76dc20c246ca88ee180fe4b4b781", 
@@ -48,12 +48,12 @@ class Carousel extends React.Component {
 		return (
 			<div className="carousel">
 				<Arrow direction="left" clickFunction={ this.previousSlide } glyph="&#9664;" />
-<<<<<<< PasswordStrength
+
 				<ImageSlide url={ imgUrls[this.state.currentImageIndex] } />
-=======
+
 				<img src = {imgUrls[this.state.currentImageIndex]} alt = "new" />
 				
->>>>>>> local
+
 				<Arrow direction="right" clickFunction={ this.nextSlide } glyph="&#9654;" />
 			</div>
 		);
@@ -77,15 +77,13 @@ const ImageSlide = ({ url }) => {
 	
 	return (
 		<div className="image-slide" style={styles}></div>
-<<<<<<< PasswordStrength
-	);
-}
-
-=======
 
 	);
 }
 
 
->>>>>>> local
+
+
+
+
 export default Carousel
