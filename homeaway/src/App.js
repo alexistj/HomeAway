@@ -6,6 +6,18 @@ function App() {
   return (
     <div>
       <Header/>
+<<<<<<< master
+=======
+<<<<<<< PasswordStrength
+      <Carousel/>
+=======
+<<<<<<< master
+=======
+      <div id = "container">
+      </div>
+>>>>>>> local
+>>>>>>> local
+>>>>>>> local
     </div>
   )
 }
