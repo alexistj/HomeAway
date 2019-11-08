@@ -23,7 +23,7 @@ class ReviewPosts extends React.Component {
         this.setState({showModal: val})
     }
 
-    handleClick(event) {
+    handleClick() {
         this.setState({showModal: true})
     }
 
@@ -68,7 +68,9 @@ class ReviewPosts extends React.Component {
                                 </div>
 
                                 <div className="column middle">
-                                    <a onClick={this.handleClick}>{item.userId}123 school rd <br/> Troy, NY 12180</a> <br/>
+                                    <p style={{textDecorationLine: 'underline'}} onClick={this.handleClick}>
+                                        {item.userId}123 school rd <br/> Troy, NY 12180
+                                    </p>
                                     <p>Price: $00.00 / month </p>
                                     <p># bed | # bath | # sqft</p>
                                 </div>
