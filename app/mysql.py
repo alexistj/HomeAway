@@ -9,15 +9,18 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 
 
 app = Flask(__name__)
+app.config('MYSQL_USER') = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'homeaway'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+app.config['JWT_SECRET_KEY'] = 'secret'
+
+mysql = MySQL(app)
+bcrypt = Bcrypt(app)
+jwt = JWTManager(app)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
-p)
-
-db = SQLAlchemy(app)
-login_manager = SQLAlchemy(app)
-login_manager.init_app(app)
-login_manager.login_view = 'login'
+CORS(app)
 
 
 class User(UserMixin, db.model):
@@ -28,4 +31,28 @@ class User(UserMixin, db.model):
 
 @app.route('/register', methods=['POST'])
 def register():
-    cur
+    cur = mysql.connection.cursor()
+    first_name = request.get_json()['first_name']
+    last_name  = request.get_json()['last_name'] 
+    email = request.get_json()['email']
+    password = bcrypt.generate_password_hash(request.get_json()['password']).decode('ufc-8')
+    isLandlord = request.get_json()['isLandlord']
+    isStudent = request.get_json()['isStudent']
+    created = datetime.utcnow()
+
+
+    cur.execute("INSERT INTO users (first_name, last_name,email, password, isLandlord, isStudent, created) VALUES ('"+
+    str(first_name)+"','"+
+    str(last_name)+"','"+
+    str(email)+"','"+
+    str(password)+"','"+
+    str(isLandlord)+"','"+
+    str(isStudent)+"','"+
+    str(created)+"')"
+    )
+
+    mysql.connection.commit()
+
+
+@app.route('/login', methods = ['POST'])
+
