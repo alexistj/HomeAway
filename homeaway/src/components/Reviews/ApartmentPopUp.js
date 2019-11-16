@@ -2,7 +2,6 @@ import React from 'react'
 import './Reviews.css';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Default from "./defultPicture.png";
 
 class ApartmentPopUp extends React.Component {
 
@@ -31,20 +30,21 @@ class ApartmentPopUp extends React.Component {
                     <div className="column right" style={{textAlign: "right"}}>
                         <h6>Distance from School: 0.0 mi</h6>
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star"></span>
-                        <span className="fa fa-star"></span>
+                        <span className="fa fa-star checked"/>
+                        <span className="fa fa-star checked"/>
+                        <span className="fa fa-star checked"/>
+                        <span className="fa fa-star"/>
+                        <span className="fa fa-star"/>
                     </div>
                 </Modal.Header>
 
                 <Modal.Body>
-                    <p> photos in slide show </p>
+                    <p> photos in slide show (carousel)</p>
                     <p> price and general information like square footage </p>
                     <p> paragraph from landlord if provided </p>
                     <p> list of reviews organized like prev page but just for this location </p>
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button variant="light" onClick={this.handleClose}>Review this Location</Button>
                     <Button variant="primary" onClick={this.handleClose}>Save to Favorites</Button>

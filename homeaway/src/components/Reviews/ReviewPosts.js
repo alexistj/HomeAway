@@ -78,11 +78,11 @@ class ReviewPosts extends React.Component {
                                 <div className="column right">
                                     DefaultUsername &nbsp; <i>01/01/2000</i> &nbsp; &nbsp;
                                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star"></span>
-                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star checked"/>
+                                    <span className="fa fa-star checked"/>
+                                    <span className="fa fa-star checked"/>
+                                    <span className="fa fa-star"/>
+                                    <span className="fa fa-star"/>
                                     <br/>
 
                                     <p>{item.body}</p>

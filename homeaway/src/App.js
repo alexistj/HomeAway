@@ -8,11 +8,6 @@ function App() {
   return (
     <div>
       <Header/>
-
-     
-
-      <div id = "container">
-      </div>
     </div>
   )
 }
