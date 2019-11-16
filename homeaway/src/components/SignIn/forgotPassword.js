@@ -33,7 +33,7 @@ class forgotPassword extends React.Component{
                     <label htmlFor="email"><b>E-mail: </b></label>
                     <input type="text" onChange={this.handleChange} placeholder="Enter email" name="email" required />
                     <br/>
-                    <button className="newPasswordButton" onClick={this.handleClick}>Reset Password</button>
+                    <button className="signinbutton" onClick={this.handleClick}>Reset Password</button>
                 </form>
             </div>
         )
