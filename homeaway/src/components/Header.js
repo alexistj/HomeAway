@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Logo from './logo.png';
 import './Header.css';
-import Reviews from "./Reviews";
+import Reviews from "./Reviews/Reviews";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import SignInApp from "./SignIn/SignInApp";

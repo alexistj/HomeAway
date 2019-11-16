@@ -41,7 +41,7 @@ class SignIn extends React.Component{
                     <br/>
                     <Link to="/SignIn/CreateAccount">Don't have an account Sign-up</Link>
                     <br/>
-                    <button className="login" onClick={this.handleClick}>Log-in</button>
+                    <button className="signinbutton" onClick={this.handleClick}>Log-in</button>
                 </form>
             </div>
         )
