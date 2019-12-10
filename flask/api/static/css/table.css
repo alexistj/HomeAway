@@ -1,0 +1,101 @@
+#empty-table {
+    padding: 1em;
+    text-align: center;
+}
+
+table {
+    width: 90vw;
+    margin: auto;
+    border-spacing: 0;
+    overflow-x: auto;
+    display: block;
+}
+
+caption {
+    padding: 22px 0 0 0;
+    display: block;
+}
+
+.table-title {
+    font-size: 22px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+table tr:nth-child(even) td {
+    background: #BBB;
+}
+
+table tr:nth-child(odd) td {
+    background: #EEE;
+}
+
+td::before {
+  content: attr(data-before-content);
+}
+
+@media (max-width: 799px) {
+    table {
+        width: 100%;
+    }
+
+    table thead, 
+    table tbody, 
+    table th, 
+    table td, 
+    table tr { 
+        display: block; 
+        border: none;
+    }
+
+    /* Hide table headers */
+    table thead tr { 
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+
+    table tr {
+        margin-top: 1em;
+        background: none !important;
+    }
+
+    table td { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 8px;
+        margin: 2px 0;
+    }
+
+    table td:before { 
+        padding-right: 10px;
+        font-weight: bold;
+    }    
+}
+
+@media (min-width: 800px) {
+    caption span {
+        font-size: 36px;
+    }
+
+    table caption {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    table td:before {
+        content: none !important;
+    }
+
+    table td.center-cell {
+        text-align: center;
+    }
+}

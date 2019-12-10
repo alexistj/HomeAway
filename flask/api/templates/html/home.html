@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<div class=container>
+	<div class="row">
+		<div class="col-sm-12"><h2>TVGS: Customer relations management system</h2></div>
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>	
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Members</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Events</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Outreach</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Volunteers</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Settings</a>
+				</li>
+			</ul>
+			<div class="ml-auto">
+				<p class="navbar-text mr-2">Welcome: John</p>
+				<button class="btn btn-outline-primary" type="button">Log Out</button>
+			</div>
+		</div>
+	</nav>
+
+	<div class="row">
+		<div class="col-sm-12 text-center"><h2>User Instructions</h2></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12"><p class="lead">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio lacus, feugiat ac ultrices vitae, tempor vel mi. Duis id elementum lectus. Duis et iaculis lacus. Duis diam augue, finibus eget orci vel, porttitor congue turpis. Etiam eu purus quis enim euismod sagittis eget vel arcu. Etiam rutrum sapien velit, vestibulum viverra est venenatis eu. Duis egestas purus sodales nisl lobortis varius vitae et augue. Nunc viverra malesuada enim ac fringilla. Nullam id elit at neque mattis vehicula. Pellentesque massa ligula, mattis ut velit non, lobortis pretium dui. Nullam luctus iaculis tempor. Pellentesque vulputate augue vel elit blandit, ut lobortis nulla euismod. Aliquam sit amet arcu quis elit interdum dignissim quis in urna. Suspendisse potenti. Aliquam imperdiet bibendum elit eu condimentum.
+		</p></div>
+	</div>
+
+    <div>
+
+        <h1> Testing </h1>
+        {{ sheet }}
+            <h1> Testing 2</h1>
+
+            <table>
+            {% for value in sheet['values'] %}
+                <tr>
+                    {% for cell in value %}
+                        <td> {{ cell }} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+
+    </div>
+
+</div>
+</body>
+</html>

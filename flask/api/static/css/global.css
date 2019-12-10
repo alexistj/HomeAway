@@ -1,0 +1,152 @@
+/* Fonts */
+
+html {
+    font-family: 'Merriweather', Times, serif;
+}
+
+h2, h3, h4, h5, h6, caption, th {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+/* Main elements */
+
+header {
+    padding: 14px;
+    margin-bottom: 14px;
+    background: #000;
+    color: #FFF;
+}
+
+main {
+    margin: 14px;
+}
+
+fieldset {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid#7A7A7A;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"], input[type="date"], textarea {
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="date"] {
+    line-height: 36px;
+}
+
+label > select {
+    height: 100%;
+    flex: 1 0 auto;
+}
+
+button, input[type="submit"] {
+    border: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    width: min-content;
+    min-width: 100px;
+    white-space: nowrap;
+    font-size: initial;
+    background: #000;
+    color: #FFF;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: #333;
+}
+
+/* Classes */
+
+.title {
+    padding: 10px;
+    background: #000;
+    color: #FFF;
+}
+
+.container {
+    border: 3px solid #f6f6f6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.container > *:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar > input {
+    flex-grow: 1;
+}
+
+.tips {
+    color: gray;
+    text-decoration: underline;
+    font-size: 0.8em;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-row {
+    text-align: right;
+}
+
+.right-row > button {
+    margin-left: 1em;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+/* ===================== */
+/* ====== Desktop ====== */
+/* ===================== */
+
+@media (min-width: 800px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    main {
+        width: min-content;
+        margin: auto;
+        min-width: 500px;
+    }
+}

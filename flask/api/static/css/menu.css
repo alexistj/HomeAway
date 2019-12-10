@@ -1,0 +1,122 @@
+nav > a, nav > form {
+    text-decoration: none;
+}
+
+nav > a > button, nav > form > button {
+    background: transparent;
+    color: #FFF;
+    text-align: start;
+    border: 1px solid transparent;
+    min-width: 0 !important;
+}
+
+nav > a > button:hover, nav > form > button:hover {
+    cursor: pointer;
+}
+
+nav > a:visited, nav > form:visited {
+    color: #FFF;
+}
+
+#mobile-menu-background {
+    background: #000;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#mobile-menu-button {
+    border: 1px solid #FFF;
+}
+
+@media (max-width: 799px) {
+    nav {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        width: 90vw;
+        height: 100vh;
+        overflow-y: auto;
+        background:#080808;
+        animation-duration: 0.5s;
+        animation-name: slideFromRight;
+    }
+
+    nav.open-menu {
+        display: flex !important;
+    }
+    
+    @keyframes slideFromRight {
+        from {right: -100%;}
+        to {right: 0;}
+    }
+        
+    nav > a, nav > form {
+        border-bottom: 1px solid #FFF;
+    }
+    
+    nav > a > button, nav > form > button {
+        font-weight: bold;
+        padding: 24px;
+        text-transform: capitalize !important;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    nav > a.selected, nav > form.selected {
+        background: #FFF;
+    }
+
+    nav > a.selected > button, nav > form.selected {
+        color: #000;
+    }
+    
+    #menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #FFF;
+        font-weight: bold;
+        padding: 15px 24px;
+    }
+
+    #menu-header, #menu-header i {
+        font-size: 30px;
+    }
+    
+    #menu-header > button {
+        min-width: min-content;
+        background: transparent;
+        color: #FFF;
+    }
+}
+
+@media (min-width: 800px) {
+    nav {
+        display: flex;
+        justify-content: end;
+    }
+    
+    nav > a {
+        text-align: center;
+    }
+
+    nav > a > button:hover {
+        border-bottom-color: #FFF !important;
+    }
+
+    nav > a.selected > button {
+        border-bottom-color: #FFF !important;
+    }
+
+    #mobile-menu-background, #mobile-menu-button, #menu-header {
+        display: none !important;
+    }
+}

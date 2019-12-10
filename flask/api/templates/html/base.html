@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/normalize.css">
+    <script src="https://kit.fontawesome.com/dcca3a14e4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
+    <script type="text/javascript" src="static/js/menu.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>{% block title %}{% endblock %} | TVGS CRM</title>
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <header class="flex-row">
+      <h1>{% block heading %}{% endblock %}</h1>
+      <nav id="nav-bar">
+        <div id="menu-header">
+          <span>TVGS</span>
+          <button onclick="closeMobileMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        {% if current_user.admin %}
+        <a href="/members"><button>Members</button></a>
+        <a href="/outreach"><button>Outreach</button></a>
+        {% endif %}
+        <a href="/events"><button>Events</button></a>
+        <a href="/settings"><button>Settings</button></a>
+        <form action="{{url_for('main.logout')}}"><button type="submit">Log Out</button></form>
+      </nav>
+      <button id="mobile-menu-button" onclick="openMobileMenu()">MENU</button>
+      <div id="mobile-menu-background"></div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.big {
+    font-size: 1.5em !important;
+}
+
+.huge {
+    font-size: 100% !important;
+    width: 100%;
+    height: 50vh;
+}
+
+.spaced {
+    margin: 14px 0;
+}
+
+#count-edit {
+    display: none;
+    width: 100px;
+    min-width: 0;
+}

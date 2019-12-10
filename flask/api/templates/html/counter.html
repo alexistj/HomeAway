@@ -1,0 +1,29 @@
+{% extends "html/base.html" %}
+{% block title %}{{ event_title }} Attendance Counter{% endblock %}
+{% block heading %}{{ event_title }} Attendance{% endblock %}
+{% block head %}
+<script type="text/javascript" src="static/js/counter.js"></script>
+<link rel="stylesheet" type="text/css" href="static/css/counter.css">
+{% endblock %}
+{% block content %}
+
+<script type="text/javascript">initCount({{ count }})</script>
+
+<form action="{{url_for('main.submit_count')}}" method="post">
+  <div class="flex-row">
+    <input type="submit" value="submit" />
+    <button type="button" class="btn-secondary" onclick="editAtt()">Edit</button>
+  </div>
+  <input type="hidden" id="row-id" name="row-id" value="{{ row_id }}"/>
+  <input type="hidden" id="count-form-input" name="count-form-input" value="{{ count }}"/>
+</form>
+<p id="count-header" class="center big spaced">
+  Attendance: 
+  <span id="count">{{ count }}</span>
+  <input id="count-edit" type="text" onchange="updateEditAtt()" />
+</p>
+<button class="center huge" onclick="incrementAtt()">
+  <i class="fas fa-plus fa-10x"></i>
+</button>
+
+{% endblock %}

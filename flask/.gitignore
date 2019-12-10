@@ -1,0 +1,17 @@
+*.pyc
+.vscode/
+venv/
+__pycache__
+.DS_Store/
+migrations/
+postgres-data/
+.mypy_cache
+.pytest_cache
+api.log
+test.db
+creds.ini
+token.pickle
+.env
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/tvgs-crm/v16/.suo

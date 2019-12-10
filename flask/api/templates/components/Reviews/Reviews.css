@@ -1,0 +1,37 @@
+.post {
+    border: 1px solid #000000;
+    padding: 20px;
+    list-style-type: none;
+    width: 900px;
+    margin: auto;
+}
+
+.dropdown {
+    width: 500px;
+    padding: 5px;
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+}
+ /*for the star rating*/
+.checked {
+  color: orange;
+}
+
+.column {
+  float: left;
+}
+
+.left, .middle {
+  width: 25%;
+}
+
+.right {
+  width: 48%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

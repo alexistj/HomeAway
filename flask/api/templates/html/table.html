@@ -1,0 +1,67 @@
+{% extends "html/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block heading %}{{ title }} Table{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="static/css/table.css">
+{% endblock %}
+{% block content %}
+ <input class="form-control" id="myInput" type="text" placeholder="Search..">
+<a class="tips" href="">Tips for searching</a>
+
+<div id="table" class="table-editable">
+<table>
+  <caption>
+    <div class="flex-row">
+      <span class="table-title">{{ title }}</span>
+      <span class="right-row">
+        <a href="/export_{{ title }}"><button>Export</button></a>
+      </span>
+    </div>
+  </caption>
+  <thead>
+    <tr>
+      {% for heading in headings %}
+        <th>{{ heading }}</th>
+      {% endfor %}
+      {% if can_edit %}
+        <th>Edit</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    {% for data in values %}
+    <tr>
+      {% for value in data %}
+        <td contenteditable="true"data-before-content="{{ headings[loop.index0] }}">
+          {{ value }}
+        </td>
+      {% endfor %}
+      {% if current_user.admin %}
+
+        {% if title == Events %}
+          <td data-before-content="Edit" class="center-cell">
+          <form action="{{url_for('main.edit_event')}}"><a  type ="submit" href=""><i class="fas fa-edit"></i></a></form>
+          </td>
+        {% else%}
+        <td data-before-content="Edit" class="center-cell">
+          <a href="{{url_for('main.counter')}}"><i class="fas fa-edit"></i></a>
+        </td>
+       {%endif%}
+      {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{% endblock %}

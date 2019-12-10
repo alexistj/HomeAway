@@ -1,0 +1,67 @@
+{% extends "html/base.html" %}
+{% block title %}Settings{% endblock %}
+{% block heading %}Settings{% endblock %}
+{% block content %}
+
+{% if submission_successful %}
+  <p>User successfully added</p>
+{% endif %}
+
+{% if curr.admin %}
+<form action="{{url_for('main.register_new_user')}}" class="container" method="post">
+ <h2>Add New User</h2>
+ <label for="name">
+   Name of New User
+   <input id="name" name="name" type="text" >
+ </label>
+ <label for="email">
+   Email for New User
+   <input id="email" name="email" type="text" >
+ </label>
+ <label for="password">
+   Password for New User
+   <input id="password" name="password" type="password">
+ </label>
+ <label for="re-enter">
+   Re-Type Password for New User
+   <input id="re-password" name="re-password" type="password" >
+ </label>
+
+ <label for="isCoor">
+   Is This User a Coodinator?<br/>
+   <input type="radio" id="admin" name="admin" value="true"> Yes<br>
+   <input type="radio" id="admin" name="admin" value="false"> No<br>
+ </label>
+ <input type="submit" name="submit" >
+</form>
+{% endif %}
+
+
+<form action="{{url_for('main.edit_email')}}" class="container" method="post">
+ <h2>Change Your Email</h2>
+ <p>Current Email: {{ curr.user_name }}</p>
+ <label for="email">
+   New Email
+   <input id="email" name="email" type="text">
+ </label>
+ <input type="submit" name="submit" value="Change Email">
+</form>
+
+<form action="" class="container">
+ <h2>Change Password</h2>
+ <label for="oldPass">
+   Old Password
+   <input id="oldPass" name="oldPass" type="password">
+ </label>
+ <label for="newPass">
+   New Password
+   <input id="newPass" name="newPass" type="password">
+ </label>
+ <label for="confirmNewPass">
+   Re-enter New Password
+   <input id="confirmNewPass" name="confirmNewPass" type="password">
+ </label>
+ <input type="submit" name="submit" value="Change Password">
+</form>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="tvgsEmail">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/normalize.css">
+    <script src="https://use.fontawesome.com/db986e905a.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>var app = angular.module("tvgsEmail", []);</script>
+    <script type="text/javascript" src="static/js/menu.js"></script>
+    <script type="text/javascript" src="static/js/form.js"></script>
+    <title>Attendance Counter</title>
+  </head>
+  <body>
+    <header ng-controller="menuCtrl" class="flex-row">
+      <h1>Edit Database</h1>
+      <nav id="nav-bar">
+        <div id="menu-header">
+          TVGS
+          <button onclick="closeMobileMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <a ng-repeat="link in nav" href="{{ link.url }}">
+          <button>
+            {{ link.title }}
+          </button>
+        </a>
+      </nav>
+      <button id="mobile-menu-button" onclick="openMobileMeu()">MENU</button>
+      <div id="mobile-menu-background"></div>
+    </header>
+    <main ng-controller="formCtrl">
+      <form class="container" action="">
+        <h2>{{ form.title }}</h2>
+        <div ng-repeat="f in form.fields">
+          <fieldset ng-if="f.subFields">
+            <legend>{{ f.id | capitalize }}</legend>
+            <label ng-repeat="s in f.subFields">
+              {{ s.value | capitalize }}
+              <textarea ng-if="s.type == 'textarea'" id="{{ f.id }}" name="{{ f.id }}" rows="{{ s.rows }}"></textarea>
+              <input ng-if="s.type != 'textarea'" id="{{ f.id }}" name="{{ f.id }}" value="{{ s.value }}" type="{{ s.type }}"></input>
+            </label>
+          </fieldset>
+          <div ng-if="!f.subFields">
+            <label>
+              {{ f.id | capitalize }}
+              <textarea ng-if="f.type == 'textarea'" id="{{ f.id }}" name="{{ f.id }}" rows="{{ s.rows }}"></textarea>
+              <input ng-if="f.type != 'textarea'" id="{{ f.id }}" name="{{ f.id }}" value="{{ s.value }}" type="{{ f.type }}"></input>
+            </label>            
+          </div>
+        </div>
+        <div class="right-row">
+          <input class="btn-secondary" type="submit" name="cancel" value="Cancel">
+          <input type="submit" name="submit" value="{{ form.submitText || 'Submit' }}">
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
